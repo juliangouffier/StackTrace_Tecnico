@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light custom-bg-color">
+    <a class="navbar-brand" href="#">Wallet App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/home}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/divisas}">Divisas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/transacciones}">Transacciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " th:href="@{/administrador}">Administrador</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/administradorBilleteras/}">Administrador Billeteras</a>
+            </li>
+        </ul>
+        <span>Hola <span sec:authentication="principal.username"> </span> </span>
+        <a th:href="@{/logout}" class="navbar-text" style="color: red">
+            Cerrar Sesion
+        </a>
+    </div>
+</nav>
+<style>
+    body {
+  background-color: #f5f7fa;
+}
+
+.degree:after {
+  content: '°C';
+  position: absolute;
+  font-size: 3rem;
+  margin-top: 0.4rem;
+  font-weight: 50;
+}
+.hash{
+font-size: 20px;
+}
+</style>
+
+<div class="container">
+
+
+
+    <div class="container">
+        <section class="mx-auto my-5" style="max-width: 23rem;">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Total: $ <span th:text="${total}"></span></h5>
+
+                    <div class="d-flex justify-content-between">
+                        <p class="hash">Hash ID: <br> <span th:text="${billetera.hash}"></span> </p>
+                        <i class="fas fa-sun-o fa-5x pt-3 text-warning"></i>
+                    </div>
+
+
+                    <ul class="list-unstyled d-flex justify-content-between font-small text-muted my-4">
+                        <li>Criptodivisas</li>
+                    </ul>
+
+                    <hr />
+
+                    <table class="table" style="text-align: center;">
+                        <thead>
+                        <tr>
+                            <th scope="col">Divisa</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Cantidad</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="cripto:${criptos}">
+                            <td th:text="${cripto.nombre_divisa}"></td>
+                            <td th:text="'$' +${cripto.valor_divisa}"></td>
+                            <td th:text="${cripto.cantidad_divisa}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <a class="d-flex justify-content-center" th:href="@{/home/verBilletera/transferir/{id} (id=${billetera.id}) }"><button class="btn btn-primary d-flex justify-content-center">Transferir un Cripto</button></a>
+                    <br>
+                    <a class="d-flex justify-content-center" th:href="@{/home/verBilletera/intercambiar/{id} (id=${billetera.id})}"><button class="btn btn-warning d-flex justify-content-center">Intercambiar Cripto</button></a>
+
+                    </div>
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+
+
+
+
+</body>
+</html>

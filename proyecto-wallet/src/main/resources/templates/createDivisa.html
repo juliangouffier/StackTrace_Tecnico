@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link th:href="@{/css/divisa.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container forget-password">
+    <div class="row">
+        <div class="col-md-12 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="text-center">
+                        <img src="https://i.ibb.co/rshckyB/car-key.png" alt="car-key" border="0">
+                        <h2 class="text-center">Forgot Password?</h2>
+                        <p>You can reset your password here.</p>
+                        <form method="post" th:action="@{/divisas/createDivisa}" th:object="${nueva}">
+                            <div class="form-group">
+                               <!-- <div class="input-group">
+                                    <select class="form-control" id="sel1">
+                                        <option selected="true" disabled="disabled">Please Select Security Question</option>
+                                        <option>Which is your favorite movie?</option>
+                                        <option>What is your pet's name?</option>
+                                        <option>What is the name of your village?</option>
+                                    </select>
+                                </div> -->
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                    <input  name="nombrecripto" th:field="*{nombre_cripto}" placeholder="Nombre" class="form-control"  type="text">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                    <input name="valor" placeholder="Valor" th:field="*{valor_cripto}" class="form-control"  type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input name="btnForget" class="btn btn-lg btn-primary btn-block btnForget" value="Crear Cripto Divisa" type="submit">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
