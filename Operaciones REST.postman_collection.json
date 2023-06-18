@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "52416f74-3ed0-4c20-85df-760df3568608",
+		"name": "Operaciones REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22404215"
+	},
+	"item": [
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Agustina\",\r\n    \"apellido\": \"Del Cielo\",\r\n    \"email\": \"as@hotmail.com\",\r\n    \"sexo\": \"hombre\",\r\n    \"dni\": \"42881932\",\r\n    \"telefono\": \"226589824\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Usuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Marcela\",\r\n    \"apellido\": \"Del Cielo\",\r\n    \"email\": \"as@hotmail.com\",\r\n    \"sexo\": \"hombre\",\r\n    \"dni\": \"42881932\",\r\n    \"telefono\": \"2664\",\r\n    \"password\": \"11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/editUser/17"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/deleteUser/"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Usuarios",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/getUsers"
+			},
+			"response": []
+		},
+		{
+			"name": "AltaDivisa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_cripto\": \"AXS\",\r\n    \"valor_cripto\": 220\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/altaDivisa"
+			},
+			"response": []
+		},
+		{
+			"name": "BorrarDivisa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/deleteDivisa/"
+			},
+			"response": []
+		},
+		{
+			"name": "ModificarDivisa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_cripto\": \"Arnold\",\r\n    \"valor_cripto\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/modificarDivisa/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ListarDivisas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/listarDivisas/"
+			},
+			"response": []
+		},
+		{
+			"name": "CrearBilletera",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/api/createWallet/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ModificarBilletera",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hash\": 9100000000000000000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/modificarWallet/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Billetera",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/deleteWallet/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Transferencia",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"walletOrigen\": ,\r\n    \"walletDestino\": ,\r\n    \"cantidad\": ,\r\n    \"criptoDivisa\": \"BTC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/transferir/"
+			},
+			"response": []
+		},
+		{
+			"name": "Deposito",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_divisa\": \"BTC\",\r\n    \"cantidad_divisa\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/deposito/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Saldo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/consultarSaldo/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Saldo Total Billeteras por usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/consultarSaldoDeUsuario/1"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
