@@ -1,0 +1,1 @@
+# StackTrace_Tecnico
